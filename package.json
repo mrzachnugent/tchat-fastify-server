@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "watch": "tsc -w",
-    "dev": "nodemon dist/index.js"
+    "watch:tsc": "tsc -w",
+    "watch:nodemon": "nodemon dist/index.js",
+    "dev": "concurrently \"npm:watch:*\""
   },
   "keywords": [],
   "author": "",
@@ -15,6 +16,7 @@
     "@fastify/cors": "^8.0.0",
     "@fastify/websocket": "^6.0.1",
     "@trpc/server": "^9.25.3",
+    "concurrently": "^7.2.2",
     "fastify": "^4.2.0",
     "zod": "^3.17.3"
   },
